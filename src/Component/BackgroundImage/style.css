@@ -1,0 +1,18 @@
+.image-blue {
+  background-image: linear-gradient(
+      0deg,
+      rgba(21, 101, 216, 0.6),
+      rgba(21, 101, 216, 0.6)
+    ),
+    url(../../assets/images/gamer.png);
+  background-repeat: no-repeat;
+  height: 1024px;
+  width: 642px;
+  background-size: cover;
+}
+.image-blue .image {
+  width: 106px;
+  height: 57px;
+  margin-top: 55px;
+  margin-left: 65px;
+}

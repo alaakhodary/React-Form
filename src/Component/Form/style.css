@@ -1,0 +1,101 @@
+form.form-control {
+  margin: 1rem auto;
+  display: grid;
+  gap: 1rem;
+}
+.div-email {
+  display: grid;
+  gap: 0.5rem;
+}
+.div-password {
+  display: grid;
+  gap: 0.5rem;
+}
+.div-repeat {
+  display: grid;
+  gap: 0.5rem;
+}
+label.label-email,
+label.label-password,
+label.label-repeat {
+  width: 143px;
+  font-size: 16px;
+  color: #696f79;
+}
+input.input-email,
+input.input-password,
+input.input-repeat {
+  width: 426px;
+  height: 64px;
+  border: 1px solid #8692a6;
+  border-radius: 6px;
+  padding-left: 10px;
+  outline: none;
+  color: black;
+}
+input.input-check {
+  width: 1rem;
+  height: 1rem;
+}
+.label-check {
+  width: 220px;
+  height: 19px;
+  font-size: 16px;
+  color: #696f79;
+}
+.checked {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+.div-submit {
+  margin-top: 1rem;
+}
+button.btn-submit {
+  width: 426px;
+  height: 64px;
+  background-color: #1565d8;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  color: white;
+  cursor: pointer;
+}
+p.or {
+  position: absolute;
+  left: 11.5rem;
+  bottom: -5px;
+  border-radius: 5rem;
+  z-index: 1;
+  background-color: white;
+  border-left: 20px solid white;
+  border-right: 20px solid white;
+  color: #bababa;
+  font-size: 12px;
+}
+.hr-or {
+  position: relative;
+}
+.login-google {
+  width: 426px;
+  height: 64px;
+  background-color: white;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  color: black;
+  cursor: pointer;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.08);
+  font-size: 16px;
+  font-weight: 600;
+}
+.google-login {
+  position: relative;
+}
+img.google {
+  position: absolute;
+  left: 3rem;
+  bottom: 21.5px;
+  width: 24px;
+  height: 24px;
+}

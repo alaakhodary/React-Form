@@ -1,0 +1,30 @@
+.img-1 {
+  margin: 5rem 28rem;
+}
+.div-flex {
+  display: flex;
+  gap: 7rem;
+}
+.right-side {
+  margin: 3rem 1rem;
+  width: 100%;
+}
+a.link {
+  width: 39px;
+  font-size: 16px;
+  text-decoration: none;
+  color: #8692a6;
+  margin-left: 10.5px;
+}
+.headerSection {
+  margin: 3rem auto;
+}
+p.paragrph {
+  margin-top: 1rem;
+  width: 411px;
+  color: #8692a6;
+}
+.line {
+  border: 1px solid #f5f5f5;
+  width: 427px;
+}

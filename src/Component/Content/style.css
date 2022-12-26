@@ -1,0 +1,41 @@
+.img-comma {
+  margin-bottom: 1rem;
+}
+p.details {
+  width: 473px;
+  height: 164px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 38px;
+  color: white;
+}
+h1.name {
+  margin-top: 2rem;
+  color: white;
+  width: 124px;
+  font-weight: 400;
+  font-size: 20px;
+}
+.img-arrow {
+  margin-top: 3rem;
+  margin-left: 27rem;
+}
+p.detail {
+  width: 473px;
+  height: 164px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 38px;
+  color: #696f79;
+}
+h1.names {
+  margin-top: 2rem;
+  width: 124px;
+  font-weight: 400;
+  font-size: 20px;
+  color: #696f79;
+}
