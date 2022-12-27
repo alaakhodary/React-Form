@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 import image from "../../assets/images/google.svg";
 import "./style.css";
+import * as yup from "yup";
+
+const regularExp =
+  "^(?=.*[a-z])(?=.*[A-Z])(?=.*d)(?=.*[@$!%*?&])[A-Za-zd@$!%*?&]{8,}$";
 
 export default class Form extends Component {
   state = {
@@ -8,8 +12,18 @@ export default class Form extends Component {
     password: "",
     repeatPassword: "",
     checked: false,
-    passwordStrength: 0,
+    /* passwordStrength: 0, */
   };
+
+  schema = yup.object().shape({
+    email: yup.string().email().required(),
+    password: yup.string().min(8).matches(regularExp).required(),
+    repeatPassword: yup
+      .string()
+      .oneOf([yup.ref("password"), null])
+      .required(),
+    checked: yup.boolean().oneOf([true]).required(),
+  });
 
   handleChangeInput = (e) => {
     const { value, id } = e.target;
@@ -20,7 +34,19 @@ export default class Form extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    console.log(this.state);
+    /*  console.log(this.state); */
+    this.schema
+      .validate({
+        email: this.state.email,
+        password: this.state.password,
+        repeatPassword: this.state.repeatPassword,
+        abortEarly: false,
+        checked: this.state.checked,
+      })
+      .then(() => console.log("validated"))
+      .catch(function (err) {
+        console.log(err.errors);
+      });
   };
 
   handleChangeCheckbox = (e) => {
@@ -28,7 +54,7 @@ export default class Form extends Component {
   };
 
   render() {
-    let strength = "Weak";
+    /* let strength = "Weak";
     if (this.state.password.length >= 8) {
       strength = "Medium";
     }
@@ -39,7 +65,7 @@ export default class Form extends Component {
       this.state.password.match(/[^a-zA-Z\d]/g)
     ) {
       strength = "Strong";
-    }
+    } */
 
     return (
       <form className="form-control" onSubmit={this.handleSubmit}>
@@ -49,7 +75,6 @@ export default class Form extends Component {
           </label>
           <input
             className="input-email"
-            required
             type="email"
             id="email"
             placeholder="Enter email address"
@@ -63,7 +88,6 @@ export default class Form extends Component {
           </label>
           <input
             className="input-password"
-            required
             type="password"
             id="password"
             placeholder="Password"
@@ -71,7 +95,7 @@ export default class Form extends Component {
             value={this.state.password}
           />
         </div>
-        <div>{strength}</div>
+        {/*  <div>{strength}</div> */}
         <div className="div-repeat">
           <label htmlFor="repeatPassword" className="label-repeat">
             Repeat password*
@@ -87,7 +111,6 @@ export default class Form extends Component {
         </div>
         <div className="checked">
           <input
-            required
             type="checkbox"
             id="checked"
             className="input-check"
