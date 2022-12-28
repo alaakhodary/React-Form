@@ -7,22 +7,44 @@ import Container from "../../Component/Container";
 import Social from "../../Component/Social";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
+import * as yup from "yup";
+
+const regularExp =
+  "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$";
 
 export default class Login extends Component {
   state = {
     email: "",
     password: "",
   };
+
+  schema = yup.object().shape({
+    email: yup.string().email().required(),
+    password: yup.string().min(8).matches(regularExp).required(),
+  });
+
   handleChangeInput = (e) => {
     const { value, id } = e.target;
     this.setState({
       [id]: value,
     });
   };
+
   handleSubmit = (e) => {
     e.preventDefault();
-    console.log(this.state);
+    /*  console.log(this.state); */
+    this.schema
+      .validate({
+        email: this.state.email,
+        password: this.state.password,
+        abortEarly: false,
+      })
+      .then(() => console.log("validated"))
+      .catch(function (err) {
+        console.log(err.errors);
+      });
   };
+
   render() {
     return (
       <div className="login-div">
@@ -58,7 +80,6 @@ export default class Login extends Component {
               </label>
               <input
                 className="input-emails"
-                required
                 type="email"
                 id="email"
                 placeholder="Write your email"
@@ -72,7 +93,6 @@ export default class Login extends Component {
               </label>
               <input
                 className="input-passwords"
-                required
                 type="password"
                 id="password"
                 placeholder="Password"
