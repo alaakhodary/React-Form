@@ -1,0 +1,94 @@
+.div-Card {
+  margin-top: 2rem;
+}
+img.imgCard {
+  position: relative;
+}
+/* img.imgCard::before {
+  position: absolute;
+  width: 678px;
+  height: 119px;
+  left: 687px;
+  top: 918px;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  opacity: 0.7;
+  backdrop-filter: blur(5px);
+} */
+p.paragraphCard1 {
+  position: absolute;
+  width: 295px;
+  height: 46px;
+  left: 1064px;
+  top: 743px;
+  font-family: inter;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 25px;
+  text-align: right;
+  text-transform: uppercase;
+  color: white;
+}
+p.paragraphCard2 {
+  position: absolute;
+  width: 439px;
+  height: 19px;
+  left: 870px;
+  top: 1012px;
+  font-family: "inter";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 25px;
+  line-height: 31px;
+  text-transform: uppercase;
+  color: white;
+}
+p.paragraphCard3 {
+  position: absolute;
+  width: 288px;
+  height: 37px;
+  left: 870px;
+  top: 1043px;
+  font-family: inter;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 23px;
+  text-transform: uppercase;
+  color: white;
+}
+img.Cup {
+  position: absolute;
+  right: -1.5rem;
+  top: -23rem;
+  z-index: 11;
+}
+.friendsimg {
+  margin-top: 3rem;
+  margin-left: -6rem;
+}
+h1.friends {
+  font-weight: 800;
+  font-size: 35px;
+  color: black;
+  margin-left: -4rem;
+}
+.div-Cup::before {
+  content: "";
+  position: absolute;
+  top: -25rem;
+  left: 33.5rem;
+  width: 10rem;
+  height: 10rem;
+  border: 1rem solid #32fb00;
+  border-radius: 50%;
+  box-shadow: -5px 5px 567px #32fb00, inset -4px -12px 20px 1px #32fb00,
+    inset -9px 16px 20px 0px #32fb00, inset 18px 11px 19px 0px #32fb00,
+    inset -4px -7px 15px 0px #32fb00, inset -8px -8px 13.5px 0px #32fb00,
+    1px 4px 567px #32fb00, -2px 4px 20px 1px #32fb00, -1px 13px 20px 0px #32fb00,
+    6px 4px 19px 0px #32fb00, -2px -4px 15px 0px #32fb00,
+    3px -4px 13.5px 0px #32fb00;
+}
+.div-Cup {
+  position: relative;
+}
