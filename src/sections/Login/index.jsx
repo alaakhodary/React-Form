@@ -1,12 +1,19 @@
 import React, { Component } from "react";
+import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+
 import Content from "../../Component/Content";
-import LogoImage from "../../assets/images/logo1.png";
-import controlImage from "../../assets/images/control.png";
-import "./style.css";
 import Container from "../../Component/Container";
 import Social from "../../Component/Social";
+
+import LogoImage from "../../assets/images/logo1.png";
+import controlImage from "../../assets/images/control.png";
+
+import "./style.css";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
+
 import * as yup from "yup";
 
 const regularExp =
@@ -39,7 +46,7 @@ export default class Login extends Component {
         password: this.state.password,
         abortEarly: false,
       })
-      .then(() => console.log("validated"))
+      .then(() => this.props.Navigate("/GamePanel"))
       .catch(function (err) {
         console.log(err.errors);
       });
@@ -108,9 +115,9 @@ export default class Login extends Component {
               <div className="register">
                 <p className="paragraphs">
                   Don’t have an account?
-                  <a href="/#" className="link-register">
+                  <Link to="/signup" className="link-register">
                     <span className="span-regester">Register</span>
-                  </a>
+                  </Link>
                 </p>
               </div>
             </div>
@@ -119,4 +126,8 @@ export default class Login extends Component {
       </div>
     );
   }
+}
+export function LogInWithRoute(props) {
+  const navigate = useNavigate();
+  return <Login Navigate={navigate} props={props} />;
 }
