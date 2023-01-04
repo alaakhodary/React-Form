@@ -1,13 +1,18 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
+
 import BackgroundImage from "../../Component/BackgroundImage";
 import Logo from "../../Component/Logo";
-import imgDots from "../../assets/images/dots.png";
-import "./style.css";
 import Content from "../../Component/Content";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";
 import Container from "../../Component/Container";
 import Form from "../../Component/Form";
+
+import imgDots from "../../assets/images/dots.png";
+
+import "./style.css";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";
 
 class SignUpBefore extends Component {
   render() {
@@ -32,9 +37,9 @@ class SignUpBefore extends Component {
               icon={faAngleLeft}
               style={{ color: " #8692A6", fontSize: 16 }}
             ></FontAwesomeIcon>
-            <a href="/#" className="link">
+            <Link to="/" className="link">
               Back
-            </a>
+            </Link>
           </div>
           <Container>
             <div className="headerSection">

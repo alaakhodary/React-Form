@@ -1,0 +1,121 @@
+.div-img {
+  position: relative;
+  margin-top: 5rem;
+}
+.background {
+  width: 588px;
+  height: 310px;
+  border-radius: 26px;
+}
+img.imgWars {
+  position: absolute;
+  top: 36px;
+  left: 0px;
+  width: 22rem;
+}
+img.logoWars {
+  position: absolute;
+  left: 18.62%;
+  right: 0%;
+  top: 0%;
+  bottom: 45.81%;
+  filter: drop-shadow(15px 3px 42.086px #ffffff);
+}
+.div-img:hover .imgWars {
+  transform: scale(1.4);
+  transform-origin: bottom left;
+  transition: 0.5s;
+}
+p.pWars {
+  position: absolute;
+  left: 16.38%;
+  right: 2.47%;
+  top: 75.94%;
+  bottom: 8.06%;
+  font-family: "Gilroy", "Inter";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 25px;
+  line-height: 31px;
+  text-align: right;
+  color: #d8d8d8;
+}
+img.imgSuper {
+  position: absolute;
+  left: -2.16%;
+  top: -0.1rem;
+}
+p.pSuper {
+  position: absolute;
+  left: 36.23%;
+  right: 4.01%;
+  top: 68.93%;
+  bottom: 2.44%;
+  font-family: "Gilroy", "Inter";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 25px;
+  line-height: 31px;
+  text-align: right;
+  color: #d8d8d8;
+}
+.backgroundSuper {
+  width: 588px;
+  height: 310px;
+  border-radius: 60px;
+  position: relative;
+}
+.backgroundCity {
+  width: 588px;
+  height: 310px;
+  border-radius: 60px;
+}
+.imgSpider {
+  position: absolute;
+  left: 48.02%;
+  top: -0.04%;
+}
+.pSpider {
+  position: absolute;
+  left: 4.45%;
+  right: 27.31%;
+  top: 61.93%;
+  bottom: 5.19%;
+  font-family: "Gilroy", "Inter";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 22px;
+  line-height: 28px;
+  color: #ffffff;
+}
+.logoSpider {
+  position: absolute;
+  filter: drop-shadow(15px 3px 13.086px #ffffff);
+  left: 6%;
+  right: 34.61%;
+  top: 0%;
+  bottom: 26.22%;
+}
+img.backgroundCity::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    0deg,
+    rgba(21, 101, 216, 0.6),
+    rgba(21, 101, 216, 0.6)
+  );
+}
+.div-img:hover .imgSuper {
+  transform: scaleY(1.2);
+  transform-origin: bottom;
+  transition: 0.5s;
+}
+.div-img:hover .imgSpider {
+  transform: scale(1.2);
+  transform-origin: bottom right;
+  transition: 0.5s;
+}

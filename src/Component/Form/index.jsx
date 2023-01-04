@@ -1,6 +1,9 @@
 import React, { Component } from "react";
+
 import image from "../../assets/images/google.svg";
+
 import "./style.css";
+
 import * as yup from "yup";
 
 const regularExp =

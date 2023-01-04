@@ -1,0 +1,31 @@
+.div-User {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  padding: 1.5rem;
+  gap: 1rem;
+}
+.div-imgUser {
+  width: 70px;
+  height: 70px;
+  border-radius: 25px;
+}
+p.p-user {
+  font-weight: 400;
+  font-size: 25px;
+  color: black;
+  display: block;
+}
+.span-user {
+  display: block;
+}
+.div-paragraph-user {
+  text-align: end;
+}
+/* .div-imgUser:hover {
+  cursor: pointer;
+  background: linear-gradient(0deg, #3e0ad1, #d6250d, #71d30e);
+  width: 70px;
+  height: 70px;
+  border-radius: 25px;
+} */
