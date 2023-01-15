@@ -2,8 +2,9 @@
   display: grid;
   align-items: center;
   width: 113px;
-  margin-top: -5rem;
+  margin-top: -6rem;
   padding: 1rem;
+  position: fixed;
 }
 .div-panel {
   width: 80px;
@@ -28,8 +29,8 @@
 .div-sub-icon {
   height: 569px;
   display: grid;
-  padding-top: 15rem;
-  margin-top: 2rem;
+  padding-top: 14rem;
+  margin-top: -3rem;
 }
 button.btn-moon {
   background: none;
@@ -52,14 +53,14 @@ button.btn-sun {
   display: grid;
   background: #c1c1c1;
   border-radius: 60px;
-  margin-top: 182px;
+  margin-top: 114px;
 }
 .hr {
   position: absolute;
   width: 9px;
-  height: 948px;
+  height: 805px;
   left: 113px;
-  top: 127px;
+  top: 65px;
   background: #ffffff;
   box-shadow: inset 2px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 38px;
