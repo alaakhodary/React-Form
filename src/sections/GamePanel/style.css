@@ -4,14 +4,14 @@
   background: linear-gradient(112.14deg, #f8f8f8 1.17%, #ffffff 96.84%);
 }
 .slider {
-  margin-left: 6rem;
+  margin-left: 9rem;
   display: flex;
   gap: 3rem;
   overflow-y: hidden;
   overflow-x: scroll;
 }
 .div-title {
-  margin-left: 6rem;
+  margin-left: 9rem;
 }
 .heading-game {
   color: black;
@@ -23,8 +23,20 @@
   overflow: hidden;
 }
 .secound-section {
-  margin-left: 6rem;
+  margin-left: 9rem;
   margin-top: 4.5rem;
   display: flex;
   gap: 13rem;
+}
+button.btn-logout {
+  position: absolute;
+  top: 2.2rem;
+  left: 90rem;
+  padding: 1rem;
+  border: none;
+  color: red;
+  font-size: 1.5rem;
+  font-weight: 600;
+  background-color: #000000b3;
+  border-radius: 12px;
 }
