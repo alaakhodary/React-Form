@@ -3,7 +3,8 @@ form.form-control {
   display: grid;
   gap: 1rem;
 }
-.div-email {
+.div-email,
+.div-name {
   display: grid;
   gap: 0.5rem;
 }
@@ -17,14 +18,16 @@ form.form-control {
 }
 label.label-email,
 label.label-password,
-label.label-repeat {
+label.label-repeat,
+label.label-name {
   width: 143px;
   font-size: 16px;
   color: #696f79;
 }
 input.input-email,
 input.input-password,
-input.input-repeat {
+input.input-repeat,
+input.input-name {
   width: 426px;
   height: 64px;
   border: 1px solid #8692a6;
