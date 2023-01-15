@@ -1,0 +1,26 @@
+ul.ul-userList {
+  margin-left: 12rem;
+  list-style: square;
+}
+.div-all-item {
+  display: grid;
+  gap: 2rem;
+  margin: 2rem;
+}
+li.items {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+p.p-item {
+  margin-bottom: 2rem;
+}
+button.btn-del {
+  padding: 1rem;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+  font-size: 17px;
+  font-weight: 600;
+  color: red;
+}

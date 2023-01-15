@@ -5,21 +5,25 @@
 .background {
   width: 588px;
   height: 310px;
-  border-radius: 26px;
+  border-radius: 60px;
+}
+.slider::-webkit-scrollbar {
+  width: 0;
 }
 img.imgWars {
   position: absolute;
-  top: 36px;
-  left: 0px;
+  top: 11px;
+  left: 1px;
   width: 22rem;
 }
 img.logoWars {
   position: absolute;
-  left: 18.62%;
+  left: 28.62%;
   right: 0%;
-  top: 0%;
+  top: -8%;
   bottom: 45.81%;
   filter: drop-shadow(15px 3px 42.086px #ffffff);
+  width: 26rem;
 }
 .div-img:hover .imgWars {
   transform: scale(1.4);
@@ -28,8 +32,8 @@ img.logoWars {
 }
 p.pWars {
   position: absolute;
-  left: 16.38%;
-  right: 2.47%;
+  left: 15.38%;
+  right: 4.47%;
   top: 75.94%;
   bottom: 8.06%;
   font-family: "Gilroy", "Inter";

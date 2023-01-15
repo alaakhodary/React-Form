@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 import Content from "../../Component/Content";
 import Container from "../../Component/Container";
 import Social from "../../Component/Social";
+import { API_URL } from "../../config/API";
 
 import LogoImage from "../../assets/images/logo1.png";
 import controlImage from "../../assets/images/control.png";
@@ -15,19 +15,19 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
 
 import * as yup from "yup";
-
-const regularExp =
-  "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$";
+import axios from "axios";
 
 export default class Login extends Component {
   state = {
     email: "",
     password: "",
+    isLoading: false,
+    /*  errors: [], */
   };
 
   schema = yup.object().shape({
     email: yup.string().email().required(),
-    password: yup.string().min(8).matches(regularExp).required(),
+    password: yup.string().required(),
   });
 
   handleChangeInput = (e) => {
@@ -39,17 +39,30 @@ export default class Login extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    /*  console.log(this.state); */
     this.schema
       .validate({
         email: this.state.email,
         password: this.state.password,
         abortEarly: false,
       })
-      .then(() => this.props.Navigate("/GamePanel"))
+      .then(async () => {
+        this.setState({ isLoading: true });
+        const res = await axios.post(`${API_URL}/users/login`, {
+          email: this.state.email,
+          password: this.state.password,
+        });
+        if (res) {
+          localStorage.setItem("token", res.data.token);
+          localStorage.setItem("name", res.data.name);
+          localStorage.setItem("admin", res.data.isAdmin ? "true" : "false");
+          if (res.data.isAdmin) this.props.admin();
+          this.props.login();
+        }
+      })
       .catch(function (err) {
-        console.log(err.errors);
-      });
+        console.log(err.errors || [err.message]); // errors => validate && message => axios(api)
+      })
+      .finally(() => this.setState({ isLoading: false }));
   };
 
   render() {
@@ -81,9 +94,14 @@ export default class Login extends Component {
             <p className="oR">Or</p>
           </div>
           <form className="form-controls" onSubmit={this.handleSubmit}>
+            {/* <div style={{ color: "red" }}>
+              {this.state.errors.map((error) => (
+                <span>{error}</span>
+              ))}
+            </div> */}
             <div className="div-emails">
               <label htmlFor="email" className="label-emails">
-                Your email
+                email
               </label>
               <input
                 className="input-emails"
@@ -126,8 +144,4 @@ export default class Login extends Component {
       </div>
     );
   }
-}
-export function LogInWithRoute(props) {
-  const navigate = useNavigate();
-  return <Login Navigate={navigate} props={props} />;
 }
