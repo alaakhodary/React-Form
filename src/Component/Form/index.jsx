@@ -1,16 +1,21 @@
 import React, { Component } from "react";
+import axios from "axios";
 
 import image from "../../assets/images/google.svg";
+
+import { API_URL } from "../../config/API";
 
 import "./style.css";
 
 import * as yup from "yup";
+import { Link } from "react-router-dom";
 
 const regularExp =
   "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$";
 
 export default class Form extends Component {
   state = {
+    name: "",
     email: "",
     password: "",
     repeatPassword: "",
@@ -19,6 +24,7 @@ export default class Form extends Component {
   };
 
   schema = yup.object().shape({
+    name: yup.string().min(8).required(),
     email: yup.string().email().required(),
     password: yup.string().min(8).matches(regularExp).required(),
     repeatPassword: yup
@@ -40,15 +46,27 @@ export default class Form extends Component {
     /*  console.log(this.state); */
     this.schema
       .validate({
+        name: this.state.name,
         email: this.state.email,
         password: this.state.password,
         repeatPassword: this.state.repeatPassword,
         abortEarly: false,
         checked: this.state.checked,
       })
-      .then(() => console.log("validated"))
+      .then(async () => {
+        const res = await axios.post(`${API_URL}/users/signup`, {
+          name: this.state.name,
+          email: this.state.email,
+          password: this.state.password,
+        });
+        if (res) {
+          localStorage.setItem("token", res.data.token);
+          localStorage.setItem("name", res.data.name);
+          this.props.login();
+        }
+      })
       .catch(function (err) {
-        console.log(err.errors);
+        console.log(err.errors || [err.message]); // errors => validate && message => axios(api)
       });
   };
 
@@ -57,21 +75,21 @@ export default class Form extends Component {
   };
 
   render() {
-    /* let strength = "Weak";
-    if (this.state.password.length >= 8) {
-      strength = "Medium";
-    }
-    if (
-      this.state.password.match(/[a-z]/g) &&
-      this.state.password.match(/[A-Z]/g) &&
-      this.state.password.match(/[0-9]/g) &&
-      this.state.password.match(/[^a-zA-Z\d]/g)
-    ) {
-      strength = "Strong";
-    } */
-
     return (
       <form className="form-control" onSubmit={this.handleSubmit}>
+        <div className="div-name">
+          <label htmlFor="name" className="label-name">
+            name*
+          </label>
+          <input
+            className="input-name"
+            type="text"
+            id="name"
+            placeholder="Enter your name"
+            onChange={this.handleChangeInput}
+            value={this.state.name}
+          />
+        </div>
         <div className="div-email">
           <label htmlFor="email" className="label-email">
             Email address*
@@ -98,7 +116,6 @@ export default class Form extends Component {
             value={this.state.password}
           />
         </div>
-        {/*  <div>{strength}</div> */}
         <div className="div-repeat">
           <label htmlFor="repeatPassword" className="label-repeat">
             Repeat password*
@@ -135,11 +152,11 @@ export default class Form extends Component {
         </div>
         <div className="google-login">
           <img src={image} alt="" className="google" />
-          <a href="/#">
+          <Link to="/login">
             <button type="button" className="login-google">
               login
             </button>
-          </a>
+          </Link>
         </div>
       </form>
     );
