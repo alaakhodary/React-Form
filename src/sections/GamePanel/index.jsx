@@ -36,6 +36,11 @@ export default class GamePanel extends Component {
                 text="Be part of the Suicide Squad and kill the Justice League!
               -Amanda Waller"
               />
+              <Slider
+                type="superMan"
+                text="Be part of the Suicide Squad and kill the Justice League!
+              -Amanda Waller"
+              />
               <Slider text="Miles Morales discovers powers from his mentor, Peter Parker. Master his unique, bio-electric venom blast attacks." />
             </div>
             <div className="secound-section">
